@@ -5,7 +5,7 @@ import {
   Sparkles, Star, Waves, Zap,
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
-import heroImage from "@/assets/massopro-mockup-principal.png";
+import heroImageAsset from "@/assets/massopro-mockup-300.png.asset.json";
 import easeImage from "@/assets/massopro-facilidade-total.png";
 import rafael from "@/assets/avatar-rafael.jpg";
 import camila from "@/assets/avatar-camila.jpg";
@@ -13,9 +13,9 @@ import bruno from "@/assets/avatar-bruno.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
-    { title: "+250 Sequências de Massagem Prontas para Massoterapeutas" },
-    { name: "description", content: "Conteúdo exclusivo para massoterapeutas: +250 sequências organizadas por objetivo, região do corpo e tipo de cliente." },
-    { property: "og:title", content: "MassoPro | +250 Sequências de Massagem Prontas" },
+    { title: "+300 Técnicas de Massagem para Massoterapeutas" },
+    { name: "description", content: "+300 técnicas de massagem para massoterapeutas que querem chegar a R$3 mil por semana com uma agenda mais completa." },
+    { property: "og:title", content: "MassoPro | +300 Técnicas de Massagem" },
     { property: "og:description", content: "Sequências organizadas para facilitar seus atendimentos diários." },
     { property: "og:type", content: "website" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -43,7 +43,7 @@ const testimonials = [
   [camila, "“Meus clientes perceberam a diferença nas sessões semanais.”", "Camila Andrade", "Massoterapeuta Desportiva"],
   [bruno, "“Organização impecável por objetivo e tipo de cliente.”", "Dr. Bruno Tavares", "Clínica de Estética Corporal"],
 ];
-const premium = ["+250 Sequências Profissionais", "Acesso imediato", "PDF em alta qualidade", "Aplicativo exclusivo para acessar as sequências", "Organização por categorias", "Organização por região do corpo", "Busca rápida de sequências", "Atualizações futuras inclusas", "Interface premium e fácil de usar", "Acesso pelo celular, tablet e computador", "Favoritar sequências", "Sessões organizadas por objetivo terapêutico", "Bônus: guia prático de drenagem linfática", "Bônus: checklist de anamnese semanal", "Bônus: guia de pacotes e precificação"];
+const premium = ["+300 Sequências Profissionais", "Acesso imediato", "PDF em alta qualidade", "Aplicativo exclusivo para acessar as sequências", "Organização por categorias", "Organização por região do corpo", "Busca rápida de sequências", "Atualizações futuras inclusas", "Interface premium e fácil de usar", "Acesso pelo celular, tablet e computador", "Favoritar sequências", "Sessões organizadas por objetivo terapêutico", "Bônus: guia prático de drenagem linfática", "Bônus: checklist de anamnese semanal", "Bônus: guia de pacotes e precificação"];
 
 function Tag({ children }: { children: React.ReactNode }) { return <span className="tag"><Sparkles size={14}/>{children}</span>; }
 function CTA({ children = "Quero acessar agora" }: { children?: React.ReactNode }) { return <a href="#planos" className="cta">{children}</a>; }
@@ -54,8 +54,8 @@ function Index() {
       <section className="px-4 pb-16 pt-10 text-center sm:px-6 sm:pt-14">
         <div className="mx-auto max-w-6xl">
           <Tag>Conteúdo exclusivo para massoterapeutas</Tag>
-          <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-extrabold leading-[1.05] sm:text-6xl lg:text-[4.25rem]">+250 <span className="text-primary">Sequências de Massagem</span> Prontas para Massoterapeutas</h1>
-          <img src={heroImage} alt="Guia MassoPro apresentado em livro, celular e notebook" className="mx-auto mt-5 w-full max-w-5xl drop-shadow-2xl" />
+          <h1 className="mx-auto mt-6 max-w-5xl text-4xl font-extrabold leading-[1.05] sm:text-6xl lg:text-[4.25rem]"><span className="text-primary">+300 técnicas de massagem</span> para massoterapeutas que querem chegar a R$3 mil por semana com uma agenda mais completa</h1>
+          <img src={heroImageAsset.url} alt="Guia MassoPro com 300 sequências apresentado em livro, celular e notebook" className="mx-auto mt-5 w-full max-w-5xl drop-shadow-2xl" />
           <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground">Sequências organizadas por objetivo, região do corpo e tipo de cliente para facilitar seus atendimentos diários com excelência técnica.</p>
           <div className="mt-10 flex flex-col items-center gap-3"><CTA/><small className="text-muted-foreground">Acesso imediato · Garantia de 7 dias</small></div>
         </div>
@@ -72,7 +72,7 @@ function Index() {
       <section className="band"><div className="section"><header className="section-head"><Tag>Comunidade Massoterapeutas</Tag><h2>Profissionais Satisfeitos</h2><p>O que dizem os profissionais que já utilizam o material.</p></header><div className="grid gap-5 md:grid-cols-3">{testimonials.map(([img,quote,name,role])=><article className="quote-card" key={String(name)}><div className="flex gap-1 text-highlight">{[1,2,3,4,5].map(n=><Star key={n} size={16} fill="currentColor"/>)}</div><p className="my-6 text-lg">{quote}</p><div className="flex items-center gap-3"><img src={img as string} alt={name as string} className="size-12 rounded-full object-cover"/><div><h3>{name as string}</h3><small className="text-muted-foreground">{role as string}</small></div></div></article>)}</div></div></section>
 
       <section id="planos" className="section"><header className="section-head"><h2>Escolha seu plano</h2><p className="font-bold text-primary">OFERTA EXPIRA EM:</p><div className="mt-3 text-4xl font-extrabold">22:26:40</div></header><div className="mx-auto grid max-w-4xl items-start gap-6 md:grid-cols-2">
-        <article className="plan"><h3>Plano Básico</h3><p>Acesso rápido ao essencial.</p><div className="price">R$ 14,90</div><ul>{["+250 sequências profissionais","Acesso imediato","PDF em alta qualidade"].map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><CTA>Quero agora</CTA></article>
+        <article className="plan"><h3>Plano Básico</h3><p>Acesso rápido ao essencial.</p><div className="price">R$ 14,90</div><ul>{["+300 sequências profissionais","Acesso imediato","PDF em alta qualidade"].map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><CTA>Quero agora</CTA></article>
         <article className="plan featured"><span className="chosen">MAIS ESCOLHIDO</span><h3>Plano Premium</h3><p>Acesso completo com aplicativo e atualizações.</p><div className="price">R$ 27,90</div><ul>{premium.map(x=><li key={x}><Check size={17}/>{x}</li>)}</ul><CTA>Quero agora</CTA></article>
       </div></section>
 

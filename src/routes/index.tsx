@@ -6,7 +6,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import heroImageAsset from "@/assets/massopro-mockup-300.png.asset.json";
-import easeImage from "@/assets/massopro-facilidade-total.png";
+import easeImageAsset from "@/assets/massopro-facilidade-300.png.asset.json";
 import rafael from "@/assets/avatar-rafael.jpg";
 import camila from "@/assets/avatar-camila.jpg";
 import bruno from "@/assets/avatar-bruno.jpg";

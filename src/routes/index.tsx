@@ -4,6 +4,7 @@ import {
   Clock3, Dumbbell, Gift, HeartPulse, Leaf, LockKeyhole, Search, ShieldCheck,
   Sparkles, Star, Waves, Zap,
 } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 import heroImage from "@/assets/massopro-mockup-principal.png";
 import easeImage from "@/assets/massopro-facilidade-total.png";
 import rafael from "@/assets/avatar-rafael.jpg";
@@ -22,7 +23,7 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const pillars = [
+const pillars: Array<[LucideIcon, string, string]> = [
   [HeartPulse, "Massagem Relaxante", "Sequências completas para reduzir estresse, ansiedade e tensão muscular do dia a dia."],
   [Activity, "Massagem Terapêutica", "Protocolos para dores crônicas, tensões localizadas e recuperação muscular."],
   [Dumbbell, "Massagem Desportiva", "Sequências para pré-treino, pós-treino, recuperação e prevenção de lesão."],
@@ -31,7 +32,7 @@ const pillars = [
   [Leaf, "Massagem em Idosos e Gestantes", "Adaptações seguras, posicionamento e contraindicações."],
 ];
 const features = ["Objetivo terapêutico", "Lista de acessórios e óleos", "Passo a passo detalhado das manobras", "Tempo estimado por região", "Adaptações p/ tipo de cliente", "Indicações e contraindicações"];
-const bonuses = [
+const bonuses: Array<[string, LucideIcon, string, string]> = [
   ["GRÁTIS", ClipboardCheck, "Checklist de Anamnese", "Ficha prática para coletar histórico e queixas do cliente."],
   ["BRINDE", CalendarDays, "Organizador de Sessões", "Planilha para organizar agenda, pacotes e retornos."],
   ["VIP", Gift, "+20 Sequências Bônus", "Focadas em atendimento domiciliar e quick massage."],
